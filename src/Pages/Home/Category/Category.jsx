@@ -8,11 +8,11 @@ import 'swiper/css/pagination';
 import { FreeMode, Pagination } from 'swiper/modules';
 
 //ctrl+d to select and change at a time
-import slide1 from '../../assets/home/slide1.jpg'
-import slide2 from '../../assets/home/slide2.jpg'
-import slide3 from '../../assets/home/slide3.jpg'
-import slide4 from '../../assets/home/slide4.jpg'
-import slide5 from '../../assets/home/slide5.jpg'
+import slide1 from '../../../assets/home/slide1.jpg'
+import slide2 from '../../../assets/home/slide2.jpg'
+import slide3 from '../../../assets/home/slide3.jpg'
+import slide4 from '../../../assets/home/slide4.jpg'
+import slide5 from '../../../assets/home/slide5.jpg'
 const Category = () => {
  
     return (
