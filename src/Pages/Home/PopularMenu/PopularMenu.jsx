@@ -8,6 +8,7 @@ import Category from "./../Category/Category";
 //and return nessecery thing that we can use many where
 const PopularMenu = () => {
   const [menu, loader] = UseMenu();
+
   // const [menu, setMenu] = useState([]);
   // useEffect(() => {
   //   fetch("menu.json")
