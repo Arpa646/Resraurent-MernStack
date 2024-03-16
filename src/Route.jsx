@@ -10,6 +10,7 @@ import Menu from "./Pages/Menu/Menu";
 import Order from "./Pages/Order/Order";
 import LogIn from "./Pages/Authentication/LogIn/LogIn";
 import SignUp from "./Pages/Authentication/SignUp/SignUp";
+import ProvateRoute from "./ProvateRoute";
   
   export  const router = createBrowserRouter([
     {
@@ -23,7 +24,7 @@ import SignUp from "./Pages/Authentication/SignUp/SignUp";
         },
         {
           path:'/menu',
-          element:<Menu></Menu>
+          element:<ProvateRoute><Menu></Menu></ProvateRoute>
         },
       {  path:'order/:category',
         element:<Order></Order>

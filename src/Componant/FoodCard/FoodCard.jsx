@@ -1,8 +1,11 @@
 import React from 'react';
 //pagination will be added 
 const FoodCard = ({item}) => {
-    const {image,name,price,recipe}=item
+    const {image,name,price,recipe,_id}=item
     console.log(image,price,recipe)
+    const handleaddToCart=(id)=>{
+     
+    }
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
         <figure className="px-10 pt-10">
@@ -12,7 +15,7 @@ const FoodCard = ({item}) => {
           <h2 className="card-title">{name}</h2>
           <p>If a dog chews shoes whose shoes does he choose?</p>
           <div className="card-actions">
-            <button className="btn btn-primary">view Recipie</button>
+            <button className="btn " onClick={()=>handleaddToCart(item)}>order now</button>
           </div>
         </div>
       </div>

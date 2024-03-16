@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 import app from './../firebase.init';
 
+//creating context for share data all over the application
 
 export const AuthContext = createContext(null);
 
@@ -9,13 +10,14 @@ const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
+    //use loading when action anything it loaded the page
     const [loading, setLoading] = useState(true);
-
+//create user with email password
     const createUser = (email, password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password)
     }
-
+//sign in user with email password
     const signIn = (email, password) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
@@ -42,6 +44,7 @@ const AuthProvider = ({ children }) => {
             return unsubscribe();
         }
     }, [])
+    //user info that using all over application
 
     const authInfo = {
         user,
