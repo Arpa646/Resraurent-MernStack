@@ -4,10 +4,11 @@ import Cover from "../../Shared/Cover/Cover";
 import { Helmet } from "react-helmet";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import OrderTab from "../OrderTab/OrderTab";
+import OrderTab from "../../Provider/OrderTab/OrderTab";
 // import UseMenu from "../../Hooks/UseMenu";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import UseMenu from "../../Hooks/UseMenu";
+import UseCart from "../../Hooks/UseCart";
 //we are using here react tab for showing data
 //which tab we will click this data will show as card
 const Order = () => {
@@ -15,9 +16,11 @@ const Order = () => {
 
    const categories = ['salad', 'pizza', 'soup', 'dessert', 'drinks'];
   const { category } = useParams();
-
-  console.log(menu)
-
+  // const navigate=useNavigate();
+  // const loaction=useLocation();
+  // const from=location?.state?.from?.pathname || "/"
+const[cart]=UseCart()
+console.log(cart)
 
 
     const initialIndex = categories.indexOf(category);

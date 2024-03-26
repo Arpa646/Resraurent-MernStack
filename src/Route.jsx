@@ -11,6 +11,10 @@ import Order from "./Pages/Order/Order";
 import LogIn from "./Pages/Authentication/LogIn/LogIn";
 import SignUp from "./Pages/Authentication/SignUp/SignUp";
 import ProvateRoute from "./ProvateRoute";
+import DashBoard from "./Layout/DashBoard";
+// import MyCart from "./Pages/DashBoard/MyCart/MyCart";
+import User from "./Pages/DashBoard/User/User";
+import MyCart from "./Pages/DashBoard/MyCart/MyCart";
   
   export  const router = createBrowserRouter([
     {
@@ -24,10 +28,10 @@ import ProvateRoute from "./ProvateRoute";
         },
         {
           path:'/menu',
-          element:<ProvateRoute><Menu></Menu></ProvateRoute>
+          element:<><Menu></Menu></>
         },
       {  path:'order/:category',
-        element:<Order></Order>
+        element:<ProvateRoute><Order></Order></ProvateRoute>
       },
       
       {
@@ -39,6 +43,22 @@ import ProvateRoute from "./ProvateRoute";
         element:<SignUp></SignUp>
       }
     ]
+    },
+    {
+      path:'/dashboard',
+      element:<DashBoard></DashBoard>,
+      children:[
+
+        {
+          path:'/dashboard/mycart',
+          element:<MyCart></MyCart>
+        
+        },
+        {
+          path:'/dashboard/alluser',
+          element:<User></User>
+        }
+      ]
     }
 
     

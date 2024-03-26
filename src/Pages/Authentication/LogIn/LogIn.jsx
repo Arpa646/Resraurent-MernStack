@@ -3,6 +3,7 @@ import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-s
 // import { AuthContext } from '../../providers/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import UseCart from '../../../Hooks/UseCart';
 // import { Helmet } from 'react-helmet-async';
 // import Swal from 'sweetalert2'
 
@@ -11,7 +12,8 @@ const Login = () => {
     // const { signIn } = useContext(AuthContext);
     // const navigate = useNavigate();
     // const location = useLocation();
-
+    const[cart]=UseCart()
+    console.log(cart)
     const from = location.state?.from?.pathname || "/";
     console.log('state in the location login page', location.state)
 
